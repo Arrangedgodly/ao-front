@@ -1,7 +1,13 @@
+//create a shop header that will link to the shop, gallery or user page
+
 function Header() {
     return (
-        <div>
-            <h1>Header</h1>
+        <div className="header">
+          <div className="header__buttons">
+            <button>Shop</button>
+            <button>Gallery</button>
+            <button>My Account</button>
+          </div>
         </div>
     )
 }
