@@ -1,0 +1,35 @@
+.card {
+  background-color: #ADB5BD;
+  border-radius: 15px;
+  display: inline-block;
+  height: 375px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+}
+
+.card__image {
+  border-radius: 15px 15px 0 0;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.5rem;
+  text-align: center;
+  color: #212529;
+}
+
+.card__links {
+  display: flex;
+  justify-content: space-around;
+  margin: 0.5rem;
+}
+
+.card__link {
+  color: #212529;
+  text-decoration: none;
+}

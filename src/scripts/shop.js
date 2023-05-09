@@ -20,6 +20,20 @@ const getProducts = () => {
     });
 };
 
+const getProduct = (productId) => {
+  return fetch(`${baseUrl}/store/products/${productId}`, {
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      },
+      })
+      .then(checkResponse)
+      .catch((error) => {
+      console.error("Error fetching product:", error);
+      });
+};
+
+
 module.exports = {
   getProducts,
+  getProduct
 }
