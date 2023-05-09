@@ -7,6 +7,13 @@
   justify-content: center;
 }
 
+.login__logo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login__header {
   font-size: 3rem;
 }
