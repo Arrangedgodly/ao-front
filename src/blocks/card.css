@@ -21,15 +21,28 @@
   margin: 0.5rem;
   text-align: center;
   color: #212529;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__links {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin: 0.5rem;
+}
+
+.card__price-range {
+  margin: 0;
 }
 
 .card__link {
   color: #212529;
   text-decoration: none;
+}
+
+.card__link:hover {
+  color: #212529;
+  cursor: pointer;
 }

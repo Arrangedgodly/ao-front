@@ -6,4 +6,10 @@
   align-items: center;
   justify-content: center;
   background-color: #E9ECEF;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.App::-webkit-scrollbar {
+  display: none;
 }

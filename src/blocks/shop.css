@@ -6,6 +6,11 @@
   width: 80vw;
   margin-top: 10vh;
   height: 100%;
+  scrollbar-width: hidden;
+}
+
+.shop::--webkit-scrollbar {
+  display: none;
 }
 
 .shop__title {
