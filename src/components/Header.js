@@ -3,17 +3,31 @@ import {RiGalleryFill} from 'react-icons/ri';
 import {VscAccount} from 'react-icons/vsc';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import AoLogo from '../images/ao-logo.png';
+import { useState, useEffect } from 'react';
 
-function Header({ changePage }) {
+function Header({ navigate, cart }) {
+  const [cartCount, setCartCount] = useState(0);
   const enterShop = () => {
-    changePage('shop');
+    navigate('/shop');
   }
   const enterGallery = () => {
-    changePage('gallery');
+    navigate('/');
   }
   const enterUser = () => {
-    changePage('user');
+    navigate('/user');
   }
+
+  const enterCart = () => {
+    if (cart.length > 0) {
+      navigate('/cart');
+    } else {
+      alert('Your cart is empty!');
+    }
+  }
+
+  useEffect(() => {
+    setCartCount(cart.length);
+  }, [cart])
 
     return (
         <div className="header">
@@ -24,7 +38,12 @@ function Header({ changePage }) {
           </div>
           <div className="header__buttons">
             <VscAccount onClick={enterUser} className='header__button'/>
-            <AiOutlineShoppingCart className='header__button'/>
+            <div className='header__cart'>
+            <AiOutlineShoppingCart onClick={enterCart} className='header__button'/>
+            {cartCount > 0 && (
+              <p className="header__cart-count">{cartCount}</p>
+            )}
+            </div>
           </div>
         </div>
     )

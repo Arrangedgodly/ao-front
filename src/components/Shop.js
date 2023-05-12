@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import ProductPopup from './ProductPopup';
 
-function Shop() {
+function Shop({ cart, addToCart }) {
     const [products, setProducts] = useState([]);
     const [activeProduct, setActiveProduct] = useState(null);
 
@@ -61,7 +61,7 @@ function Shop() {
                     <ProductCard key={product.id} product={product} openPopup={openPopup} />
                 ))}
             </div>
-            {activeProduct && (<ProductPopup product={activeProduct} closePopup={closePopup} />)}
+            {activeProduct && (<ProductPopup product={activeProduct} closePopup={closePopup} addToCart={addToCart} />)}
         </div>
     )
 }

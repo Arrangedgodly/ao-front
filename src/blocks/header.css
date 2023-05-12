@@ -39,3 +39,20 @@
 .header__button:hover {
   color: #ffffff;
 }
+
+.header__button:active {
+  color: #ffffff;
+}
+
+.header__cart {
+  position: relative;
+}
+
+.header__cart-count {
+  position: absolute;
+  top: -32px;
+  left: 12.5px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}

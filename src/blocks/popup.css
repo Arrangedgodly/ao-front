@@ -9,10 +9,10 @@
 
 .popup__content {
   width: 500px;
-  height: 500px;
+  height: auto;
   background-color: #ffffff;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   display: flex;
   flex-direction: column;
@@ -62,10 +62,10 @@
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   z-index: 1;
-  max-height: 80px;
+  max-height: 200px;
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: none;
@@ -105,6 +105,33 @@
   font-size: 2rem;
   color: #212529;
   cursor: pointer;
+}
+
+.popup__quantity {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup__quantity-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #898989;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup__quantity-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #212529;
 }
 
 .popup__button {

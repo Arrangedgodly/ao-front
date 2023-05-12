@@ -2,14 +2,20 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useState, useEffect } from "react";
 
-function ProductPopup({ product, closePopup }) {
+function ProductPopup({ product, closePopup, addToCart }) {
   const data = product.sync_product;
   const variants = product.sync_variants;
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [activeVariant, setActiveVariant] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const changeVariant = (index) => {
     setActiveVariant(index);
+  };
+
+  const triggerAddToCart = () => {
+    addToCart(product);
+    closePopup();
   };
 
   return (
@@ -29,8 +35,7 @@ function ProductPopup({ product, closePopup }) {
             className="popup__dropdown-icon"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           />
-        </div>
-        {dropdownOpen && (
+          {dropdownOpen && (
           <div className="popup__dropdown-content">
             {variants.map((variant, index) => (
               <div
@@ -48,8 +53,25 @@ function ProductPopup({ product, closePopup }) {
             ))}
           </div>
         )}
+        </div>
         <AiFillCloseCircle className="popup__close" onClick={closePopup} />
-        <button className="popup__button">Add to Cart</button>
+        <div className="popup__quantity">
+          <button
+            className="popup__quantity-button"
+            onClick={() => setQuantity(quantity - 1)}
+            disabled={quantity === 1}
+          >
+            -
+          </button>
+          <p className="popup__quantity-text">{quantity}</p>
+          <button
+            className="popup__quantity-button"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            +
+          </button>
+        </div>
+        <button className="popup__button" onClick={triggerAddToCart}>Add to Cart</button>
       </div>
     </div>
   );
